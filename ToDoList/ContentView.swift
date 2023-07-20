@@ -21,10 +21,11 @@ struct ContentView: View {
             VStack {
                 HStack{
                     Text("Journal")
-                        .font(.system(size: 40))
-                        .fontWeight(.black)
+                        
+                        .fontWeight(.bold)
+                        .font(.custom("KosugiMaru-Regular", size: 40))
                     Spacer()
-                        .font(.custom("KosugiMaru-Regular", size: 46))
+        
                     
                     Button(action: {
                         self.showNewTask = true
@@ -32,7 +33,15 @@ struct ContentView: View {
                         Text("+")
                             .font(.system(size:40))
                             .foregroundColor(Color.black)
+                        
                     }
+                    .buttonStyle(.borderedProminent)
+                              .cornerRadius(300)
+                              .tint(Color(hex:"8b9475"))
+                              .controlSize(.regular)
+                              .shadow(radius: 1)
+                    
+                    
                 }
                 .padding()
                 Spacer()
@@ -40,8 +49,11 @@ struct ContentView: View {
                     ForEach (toDoItems) { toDoItem in
                         if toDoItem.isImportant == true {
                             Text("‼️" + (toDoItem.title ?? "No title"))
+                                .font(.custom("KosugiMaru-Regular", size: 20))
+                                
                         } else {
                             Text(toDoItem.title ?? "No title")
+                                .font(.custom("KosugiMaru-Regular", size: 20))
                         }
                         
                     }

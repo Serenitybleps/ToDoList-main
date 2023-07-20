@@ -12,7 +12,7 @@ struct NewToDoView: View {
     @State private var promptRandom = "What's on your mind?"
     @State private var name = ""
     
-        let prompts = ["Think about one thing that made you feel productive today!", "What made you smile today?", "Which of your strengths am I most grateful for?", "Write a letter to your younger self!", "What do you look forward to?", "What is something you learned recently?"]
+        let prompts = ["Think about one thing that made you feel productive today.", "What made you smile today?", "Which of your strengths are you most grateful for?", "Write a letter to your younger self.", "What do you look forward to?", "What is something you learned recently?, "]
     
     @Environment(\.managedObjectContext) var context
     @Binding var showNewTask : Bool
@@ -36,8 +36,11 @@ struct NewToDoView: View {
                         
                         
                         Text (promptRandom)
-                            .font(.title2)
+                            
+                            .padding(.horizontal)
+                            .font(.custom("KosugiMaru-Regular", size: 30))
                             .foregroundColor(Color(hex: "#31430A"))
+                            
                     }
                     
                     
@@ -50,12 +53,14 @@ struct NewToDoView: View {
                     .foregroundColor(Color(hex: "#31430A"))
                     .buttonStyle(.borderedProminent)
                     .tint(Color(hex:"#CDD7B6"))
+                    .font(.custom("KosugiMaru-Regular", size: 20))
                     
                     
                     
                     
                     .padding()
                     TextField("Thoughts...", text: $title, axis: .vertical)
+                        .font(.custom("KosugiMaru-Regular", size: 20))
                         .lineLimit(15, reservesSpace:true)
                         .padding([.top, .leading, .trailing])
                         .background(Color(hex: "#CDD7B6"))
@@ -64,7 +69,9 @@ struct NewToDoView: View {
                         .cornerRadius(15)
                         .padding()
                     Toggle(isOn: $isImportant) {
-                        Text("Pinned?")
+                        Text("Important?")
+                            .font(.custom("KosugiMaru-Regular", size: 20))
+                            
 
                         
                     }
@@ -77,7 +84,7 @@ struct NewToDoView: View {
                     }) {
                         Text("Add")
                             .fontWeight(.bold)
-                        
+                            .font(.custom("KosugiMaru-Regular", size: 20))
                             .foregroundColor(Color(hex: "#31430A"))
                         
                             
