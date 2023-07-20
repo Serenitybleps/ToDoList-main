@@ -16,12 +16,15 @@ struct ContentView: View {
     var toDoItems: FetchedResults<ToDo>
     var body: some View {
         ZStack{
+            Color(hex: "#CDD7B6")
+                .ignoresSafeArea()
             VStack {
                 HStack{
                     Text("Journal")
                         .font(.system(size: 40))
                         .fontWeight(.black)
                     Spacer()
+                        .font(.custom("KosugiMaru-Regular", size: 46))
                     
                     Button(action: {
                         self.showNewTask = true

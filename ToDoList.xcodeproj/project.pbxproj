@@ -15,6 +15,7 @@
 		BD0B19272A672B400078F0E9 /* NewToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0B19262A672B400078F0E9 /* NewToDoView.swift */; };
 		BD0B19292A6735ED0078F0E9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0B19282A6735ED0078F0E9 /* Persistence.swift */; };
 		BD0B192C2A6737B00078F0E9 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD0B192A2A6737B00078F0E9 /* ToDoList.xcdatamodeld */; };
+		BDC481732A69CBC100CD6A23 /* KosugiMaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDC481722A69CBC100CD6A23 /* KosugiMaru-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		BD0B19262A672B400078F0E9 /* NewToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoView.swift; sourceTree = "<group>"; };
 		BD0B19282A6735ED0078F0E9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BD0B192B2A6737B00078F0E9 /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
+		BDC481712A69CB6900CD6A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BDC481722A69CBC100CD6A23 /* KosugiMaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KosugiMaru-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 		BD0B19152A6728CE0078F0E9 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				BDC481712A69CB6900CD6A23 /* Info.plist */,
+				BDC481722A69CBC100CD6A23 /* KosugiMaru-Regular.ttf */,
 				BD0B192A2A6737B00078F0E9 /* ToDoList.xcdatamodeld */,
 				BD0B19182A6728CE0078F0E9 /* ContentView.swift */,
 				BD0B19282A6735ED0078F0E9 /* Persistence.swift */,
@@ -139,6 +144,7 @@
 			files = (
 				BD0B191E2A6728D00078F0E9 /* Preview Assets.xcassets in Resources */,
 				BD0B191B2A6728D00078F0E9 /* Assets.xcassets in Resources */,
+				BDC481732A69CBC100CD6A23 /* KosugiMaru-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +291,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoList/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToDoList/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -313,6 +321,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoList/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToDoList/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

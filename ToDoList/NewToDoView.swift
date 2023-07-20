@@ -12,7 +12,7 @@ struct NewToDoView: View {
     @State private var promptRandom = "What's on your mind?"
     @State private var name = ""
     
-        let prompts = ["Think about one thing that made you feel productive today", "What made you smile today?", "What's a practice, place, or person that helps you reduce stress in your life?", "Write a letter to your younger self", "What do you look forward for", "What is something you learned recently"]
+        let prompts = ["Think about one thing that made you feel productive today!", "What made you smile today?", "Which of your strengths am I most grateful for?", "Write a letter to your younger self!", "What do you look forward to?", "What is something you learned recently?"]
     
     @Environment(\.managedObjectContext) var context
     @Binding var showNewTask : Bool
@@ -21,53 +21,73 @@ struct NewToDoView: View {
     var body: some View {
         ZStack{
             Color(hex: "#F6EFE8")
-            .ignoresSafeArea()
+                .ignoresSafeArea()
             
-            VStack{
                 
-                VStack {
+            Color(hex: "#F6EFE8")
+            
+                .cornerRadius(20)
+            
+            ZStack {
+                
+                VStack{
+                    
+                    VStack {
+                        
+                        
+                        Text (promptRandom)
+                            .font(.title2)
+                            .foregroundColor(Color(hex: "#31430A"))
+                    }
                     
                     
-                    Text (promptRandom)
-                        .font(.title)
-                }
-                
-                
-                Button("New Prompt"){
+                    Button("New Prompt"){
+                        
+                        let random = Int.random (in:1..<6)
+                        let prompt = prompts[random]
+                        promptRandom = prompt
+                    }//button
+                    .foregroundColor(Color(hex: "#31430A"))
+                    .buttonStyle(.borderedProminent)
+                    .tint(Color(hex:"#CDD7B6"))
                     
-                    let random = Int.random (in:1..<6)
-                    let prompt = prompts[random]
-                    promptRandom = prompt
-                }//button
-                .foregroundColor(.black)
-                
-                
-                
-                
-                .padding()
-                TextField("Thoughts...", text: $title, axis: .vertical)
-                    .lineLimit(5, reservesSpace:true)
+                    
+                    
+                    
                     .padding()
-                    .background(Color(.systemGroupedBackground))
-                    .cornerRadius(15)
-                    .padding()
-                Toggle(isOn: $isImportant) {
-                    Text("Pinned?")
-                    
-                }
-                .padding()
+                    TextField("Thoughts...", text: $title, axis: .vertical)
+                        .lineLimit(15, reservesSpace:true)
+                        .padding([.top, .leading, .trailing])
+                        .background(Color(hex: "#CDD7B6"))
+                        
+                      
+                        .cornerRadius(15)
+                        .padding()
+                    Toggle(isOn: $isImportant) {
+                        Text("Pinned?")
+
+                        
+                    }
                 
-                Button(action: {
-                    self.addTask(title: self.title, isImportant: self.isImportant)
-                    self.showNewTask = false
-                }) {
-                    Text("Add")
+                    .padding()
+                    
+                    Button(action: {
+                        self.addTask(title: self.title, isImportant: self.isImportant)
+                        self.showNewTask = false
+                    }) {
+                        Text("Add")
+                            .fontWeight(.bold)
+                        
+                            .foregroundColor(Color(hex: "#31430A"))
+                        
+                            
+                        
+                    }
+                    .padding()
                 }
-                .padding()
             }
+            
         }
-        
-        
         
     }
     private func addTask(title: String, isImportant: Bool = false) {
